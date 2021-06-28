@@ -23,7 +23,7 @@ Contents:
 
 Steps to make everything work:
 
-1. Download all the files from repo as a zip or git clone.
+1. Download all the files from repo as a zip or `git clone https://github.com/GordoNice/phits_sublime_support.git`.
 2. Place 4 files (`phits.sublime-syntax`,
 `phits-comments.tmPreferences` + 2 files from `win` or `linux` directory) in
 sublime config directory. This path is by default: `~/.config/sublime-text-3/Packages/User`
