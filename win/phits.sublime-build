@@ -1,0 +1,8 @@
+{
+	"shell_cmd": "phits.bat $file_name",
+	"env": {
+    	"PHITSPATH": "C:/phits",
+        "PATH": "C:/phits/bin:C:/phits/dchain-sp/bin:${PATH}",
+        "selector": "source.phits.bat",
+    },
+}

@@ -1,0 +1,72 @@
+%YAML 1.2
+---
+# Look at the README.md for info
+
+name: PHITS input
+file_extensions: [inp]
+scope: input.phits
+contexts:
+  main:
+
+    # Parameters
+    - match: '(?i)[a-z()0-9<>-]+\s+(?=\=)|infl:'
+      scope: entity.other.attribute-name
+
+    # Comments begin with a $ or # and finish at the end of the line
+    - match: '\$|\#\D'
+      scope: comment
+      push: line_comment
+
+    # Keywords (sections)
+    # Note that blackslashes don't need to be escaped within single quoted
+    # strings in YAML. When using single quoted strings, only single quotes
+    # need to be escaped: this is done by using two single quotes next to each
+    # other.
+    - match: '\[ .+ \]'
+      scope: markup.heading punctuation.definition.heading
+
+    # Particles and elements
+    - match: '\b(all|photon|neutron|proton|pion-?|muon[-]*|kaon[+-0]?|electron|positron|deuteron|triton|3he|alpha|[0-9]{0,3}A[cglmrstu]|[0-9]{0,3}B[aehikr]?|[0-9]{0,3}C[adeflmnorsu]?|[0-9]{0,3}D[bsy]|[0-9]{0,3}E[rsu]|[0-9]{0,3}F[elmr]?|[0-9]{0,3}G[ade]|[0-9]{0,3}H[efgos]?|[0-9]{0,3}I[nr]?|[0-9]{0,3}Kr?|[0-9]{0,3}L[airuv]|[0-9]{0,3}M[dgnot]|[0-9]{0,3}N[abdeiop]?|[0-9]{0,3}Os?|[0-9]{0,3}P[abdmortu]?|[0-9]{0,3}R[abefghnu]|[0-9]{0,3}S[bcegimnr]?|[0-9]{0,3}T[abcehilm]|[0-9]{0,3}U(u[opst])?|[0-9]{0,3}V|[0-9]{0,3}W|[0-9]{0,3}Xe|[0-9]{0,3}Yb?|[0-9]{0,3}Z[nr])\b'
+      scope: keyword
+
+   # Surfaces
+    - match: '(?i)\b(p[xyz]*|s[oxyzq]*|c/?[xyz]|k/?[xyz]|gq|t[xyz]|box|rpp|sph|rcc|rhp|hex|rec|trc|ell|wed)\b'
+      scope: support.constant
+
+   # Functions
+    - match: '(?i)\b(float|int|abs|exp|log|log10|max|min|mod|nint|sign|sqrt|a?sinh?|a?tan2?h?|a?cosh?|ymin|ymax)\b'
+      scope: support.constant
+
+   # Axis
+    - match: '\b(eng|reg|[xyzrt]{1,3}|cos|the|mass|charge|chart|dchain|let|t-eng|eng-t|t-el|el-t|t-e2|e2-t|e12|e21)\b'
+      scope: variable.parameter
+
+   # mat, set, ifl
+    - match: '(?i)\b(mat|set:\s?*|infl:|VOL|GAS)\b'
+      scope: entity.other.attribute-name
+
+   # Sub titles
+    - match: '(\s?+mat\s+name\s+color|\s?+mat\s+name\s+size\s+color|\s?+non\s+r-from\s+r-to\s+area|\s?+r-from\s+r-to\s+area|\s?+reg\s+typ\s+gap\s+mgf\s+trcl\s+polar\s+time|\s?+reg\s+del|\s?+reg\s+mID|\s?+reg\s+vol|\s?+reg\s+name\s+size|\s?+reg\s+imp)'
+      scope: entity.other.inherited-class
+
+    # Numbers
+    # - match: '\b[-+]?[0-9]*\.?[0-9]+\b'
+    - match: '-?\b[\d.]+(?:[eE][-+]?\d+)?\b'
+      scope: constant.numeric
+
+    # Variables
+    - match: '\b(c[0-9]{1,3}|pi)\b'
+      scope: keyword
+
+    # Paths, signs etc
+    - match: '[=#]'
+      scope: string
+
+    # Brackets
+    - match: '{.+}'
+      scope: diff.inserted
+
+  line_comment:
+    - meta_scope: comment
+    - match: '\n'
+      pop: true
