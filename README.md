@@ -1,8 +1,8 @@
-# Syntax highlighting and execute of PHITS input files support for Sublime Text
+# Syntax highlighting and execution of PHITS input files support for Sublime Text editor
 
 This repo consists of files which are dedicated to provide syntax highlighting for
 [PHITS](https://phits.jaea.go.jp/) input files in [Sublime Text editor](https://www.sublimetext.com/).
-Additionally, it provides support for build option.
+Additionally, it provides support for build option (execution of PHITS input files from sublime).
 
 ![](https://github.com/GordoNice/phits_sublime_support/blob/master/Screenshot.png "Screenshot with syntax highlighting")
 
@@ -23,7 +23,7 @@ Contents:
 
 Steps to make everything work:
 
-1. Download all the files from repo as a zip or `git clone https://github.com/GordoNice/phits_sublime_support.git`.
+1. Download all the files from the repo as a zip or via git: `git clone https://github.com/GordoNice/phits_sublime_support.git`.
 2. Place 4 files (`phits.sublime-syntax`,
 `phits-comments.tmPreferences` + 2 files from `win` or `linux` directory) in
 sublime config directory. This path is by default: `~/.config/sublime-text-3/Packages/User`
