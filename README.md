@@ -58,4 +58,4 @@ run and `phig3d` option if one want to show geometry using phig3d.
 please look at the `Tools -> build` to make it sure). So, `ctrl+B` will launch
 current PHITS input right from the sublime!
 
-Made by Ivan Gordeev <GN>, 2021 for [PHITS community](https://meteor.nucl.kyushu-u.ac.jp/phitsforum/), enjoy! :blush:
+Made by Ivan Gordeev \<GN\>, 2021 for [PHITS community](https://meteor.nucl.kyushu-u.ac.jp/phitsforum/), enjoy! :blush:
