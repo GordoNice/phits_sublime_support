@@ -11,8 +11,13 @@ Contents:
 ```
 .
 ├── linux
-│   ├── phig3d.sublime-build      # file for build option (geometry view of currently open input file)
-│   └── phits.sublime-build       # file for build option (launch calculations of currently open input file)
+│   ├── dchain.sublime-build  # file for build option of dchain)
+│   ├── phig3d.sublime-build  # file for build option of phig 3d (geometry view of currently open input file)
+│   └── phits.sublime-build   # file for build option (launch calculations of currently open input file)
+├── macOS                     # same files as in "linux" folder, but dedicated to macOS
+│   ├── dchain.sublime-build
+│   ├── phig3d.sublime-build
+│   └── phits.sublime-build
 └── win                           # same files as in "linux" folder, but dedicated to windows
     ├── phig3d.sublime-build
     └── phits.sublime-build
@@ -27,13 +32,17 @@ Steps to make everything work:
    ```
    git clone https://github.com/GordoNice/phits_sublime_support.git
    ```
-2. Place 4 files (`phits.sublime-syntax`, `phits-comments.tmPreferences` + 2
-   files from `win` or `linux` directory) in sublime config directory.
+2. Place 5 (4 for windows) files (`phits.sublime-syntax`, `phits-comments.tmPreferences` + 3 (2 for windows)
+   files from `linux`, `macOS` or `win` or  directory) in sublime config directory.
    This path is by default (for linux users):
    ```
    ~/.config/sublime-text-3/Packages/User
    ```
-   and (for windows users):
+   or for macOS:
+   ```
+   /Users/{username}/Library/Application Support/Sublime Text 3/Packages/User
+   ```
+   and for windows users:
    ```
    C:\Users\{username}\AppData\Roaming\Sublime Text 3\Packages\User
    ```
@@ -42,8 +51,8 @@ Steps to make everything work:
       no need to change anything, because the default path is already set in files under
       `win` directory. Though, if PHITS was installed in arbitrary directory, then paths
       in files under `win` directory should be changed accordingly.
-    - For linux users: one need to change paths (look for `{path_to_phits}`) in
-      both `phits.sublime-build` and `phig3d.sublime-build` files accordingly,
+    - For linux and macOS users: one need to change paths (look for `{path_to_phits}`) in
+      every `[name].sublime-build` file accordingly,
       these paths are the place with PHITS files.
 
 After these simple steps, input files will be highlighted, and the ability to
@@ -67,4 +76,4 @@ run and `phig3d` option if one want to show geometry using phig3d.
 please look at the `Tools -> build` to make it sure). So, `ctrl+B` will launch
 current PHITS input right from the sublime!
 
-Made by Ivan Gordeev \<GN\>, 2021 for [PHITS community](https://meteor.nucl.kyushu-u.ac.jp/phitsforum/), enjoy! :blush:
+Made by Ivan Gordeev, 2021 for [PHITS community](https://meteor.nucl.kyushu-u.ac.jp/phitsforum/), enjoy! :blush:

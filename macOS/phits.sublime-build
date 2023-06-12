@@ -1,0 +1,8 @@
+{
+	"shell_cmd": "phits.sh $file_name",
+	"env": {
+    	"PHITSPATH": "{path_to_phits}/phits",
+        "PATH": "{path_to_phits}/phits/bin:{path_to_phits}/phits/dchain-sp/bin:${PATH}",
+        "selector": "source.phits.sh",
+    },
+}
