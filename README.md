@@ -10,15 +10,11 @@ Contents:
 
 ```
 .
-├── linux
+├── linux-macOS
 │   ├── dchain.sublime-build  # file for build option of dchain)
 │   ├── phig3d.sublime-build  # file for build option of phig 3d (geometry view of currently open input file)
 │   └── phits.sublime-build   # file for build option (launch calculations of currently open input file)
-├── macOS                     # same files as in "linux" folder, but dedicated to macOS
-│   ├── dchain.sublime-build
-│   ├── phig3d.sublime-build
-│   └── phits.sublime-build
-└── win                           # same files as in "linux" folder, but dedicated to windows
+└── win                       # same files as in "linux-nmacOS" folder, but dedicated to windows
     ├── phig3d.sublime-build
     └── phits.sublime-build
 ├── phits-comments.tmPreferences  # file which provides comment out option
